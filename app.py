@@ -187,7 +187,7 @@ def _friendly_error(exc: Exception) -> str:
     return f"An unexpected error occurred: {msg}"
 
 
-def _load_data(uploaded_file: st.runtime.uploaded_file_manager.UploadedFile) -> pd.DataFrame:
+def _load_data(uploaded_file) -> pd.DataFrame:
     """Read an uploaded CSV or Excel file into a DataFrame."""
     ext = uploaded_file.name.rsplit(".", 1)[-1].lower()
     if ext == "csv":
@@ -623,7 +623,8 @@ def _custom_plot_builder(df: pd.DataFrame) -> None:
         elif plot_type == "Correlation Matrix":
             with col_right:
                 # TODO: analytics/eda.py does not yet expose a correlation matrix function.
-                # Once a viz_correlation() function is added to analytics/eda.py, call it here.
+                # Action required (analytics team): add viz_correlation(data, columns) to
+                # analytics/eda.py, then replace the placeholder below with a call to it.
                 st.markdown(
                     """
                     <div class="todo-box">
