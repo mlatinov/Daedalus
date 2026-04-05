@@ -333,7 +333,7 @@ def _download_buttons(fig: go.Figure, key: str) -> None:
                 key=f"dl_png_{key}",
             )
         except Exception:
-            st.caption("PNG export: install `kaleido` to enable.")
+            st.caption("PNG export unavailable — `kaleido` could not be loaded.")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
